@@ -6,7 +6,15 @@ package HydrogenComponents
     import C = Modelica.Constants;
 
     parameter Real alpha_m(unit="1") = 0.5;
-    SI.CurrentDensity i_0 = 0.05;
+    SI.CurrentDensity i_0 = 21.8*10^(-4) "hat mit Material der Membran zu tun";
+
+    Real alpha = 1 "Tafel equation parameter";
+
+    //PEM-Parameter:
+    SI.CurrentDensity i_max = 0.5 "maximal stromdichte der Membran";
+    SI.Length delta = 0.35*10^(-3) "membran thickness";
+    SI.Conductivity sigma "conductivity of membran";
+    Real lambda = 22 "water content of membran (dry: ~0.5; water saturated gas: ~13; liquid water: ~22)";
 
   equation
 
@@ -17,23 +25,33 @@ package HydrogenComponents
 
 
 
-    V_cell = V_rev + V_act + V_ohm;
+    V_cell = V_rev + V_act + V_ohm + V_diff;
 
+    V_rev = V_rev_0 + T*C.R/(z*C.F)*log(p_H2/p_0*sqrt(p_O2/p_0)/a_H2O) "Nernst Equation";
+
+    if i == 0 then
+      V_act = 0;
+    else
+      V_act = C.R*T/(alpha*z*C.F)*log(i/i_0) "Tafel equation";
+    end if;
+
+    V_ohm = I*delta/sigma;
+    sigma = (0.005139*lambda -0.00326)*exp(1268*(1/303-1/T));
+
+    V_diff = 0 "- C.R*T/(z*C.F)*log(1-i/i_max)";//vernachlässigbar?
 
     //Lückenfüller:
-    T = 298.15;
+    T = 293.15;
 
-    V_ohm = +0.0005*I;
-    V_act = +2*C.R*T/(alpha_m*C.F)*asinh(i/(2*i_0));
-
-    p_H2 = p_O2;
-    p_H2 + p_O2 = 100000;
+    p_H2 = p_0 + i*24 - p_H2O;
+    p_O2 = p_0 + i*28 - p_H2O;
 
     if P_el==0 then
       eff = 0;
     else
-      eff = N_H2/P_el;
+      eff = N_H2*H/P_el;
     end if;
+
 
   end Elektrolyser;
 
@@ -46,11 +64,11 @@ package HydrogenComponents
     Modelica.Electrical.Analog.Interfaces.NegativePin n;
     HydrogenConnector h;
 
-    parameter SI.Area A = 1 "Area of exchange-membrane";
+    parameter SI.Area A = 25*10^(-6) "Area of exchange-membrane";
 
     //Parameter Thermodynamik
 
-    //SI.Pressure p;
+    SI.Pressure p_0 = 100000;
     SI.MolarFlowRate N_H2;
 
     SI.MolarInternalEnergy G = 236483 "freie Gische Energie bei T=298,15K und P=1atm";
@@ -60,6 +78,8 @@ package HydrogenComponents
     SI.Temperature T "temperature of incomming Water";
     SI.Pressure p_H2 "partial pressure H2";
     SI.Pressure p_O2 "partial pressure O2";
+    parameter SI.Pressure p_H2O = 46000 "partial pressure H2O";
+
     Real a_H2O(unit="PA^1.5") = 1 "water activity (equals 1 for liquid water)";
 
     //Parameter Elektronik
@@ -69,8 +89,9 @@ package HydrogenComponents
     SI.Voltage V_rev "reversible Cell-Voltage";
 
 
-    SI.Voltage V_act "Voltage-losse due to activation processes";
-    SI.Voltage V_ohm "ohmic Voltage-losses";
+    SI.Voltage V_act "activation process resistance";
+    SI.Voltage V_ohm "ohmic resistance";
+    SI.Voltage V_diff "diffusion resistance";
     SI.Current I;
     SI.CurrentDensity i;
 
@@ -86,7 +107,6 @@ package HydrogenComponents
     V_cell = p.v - n.v;
 
     //thermodynamic equations
-    V_rev = V_rev_0 + T*C.R/(z*C.F)*log(p_H2*sqrt(p_O2)/a_H2O) "Nernst Equation";
 
     I=A*i;
     P_el = V_cell*I;
@@ -112,7 +132,7 @@ package HydrogenComponents
     SI.Energy InputPower(start = 0);
 
   equation
-    der(i) = 0.02;
+    der(i) = 0.2;
 
     p.i = -i;
     p.i + n.i = 0;
