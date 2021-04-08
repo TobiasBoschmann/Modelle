@@ -9,7 +9,7 @@ Modelica experiment file
 double experiment(7,1)
        0                   # StartTime    Time at which integration starts
                            #              (and linearization and trimming time)
-     100                   # StopTime     Time at which integration stops
+       1                   # StopTime     Time at which integration stops
        0                   # Increment    Communication step size, if > 0
      500                   # nInterval    Number of communication intervals, if > 0
  1.0000000000000000E-004   # Tolerance    Relative precision of signals for
@@ -102,61 +102,113 @@ int settings(13,1)
 
 
 #    Names of initial variables
-char initialName(27,18)
-PI.p.v
-PI.n.v
-PI.i
-PI.der(i)
-PI.InputPower
-PI.der(InputPower)
-E.n.v
+char initialName(53,19)
+PI.PowerOutput
+PI.der(PowerOutput)
+E.O2_Output.m_flow
+E.H2_Output.m_flow
+E.H2O_Input.m_flow
+E.alpha_m
 E.A
-E.G
-E.H
+E.i_0
+E.i_max
+E.delta
+E.sigma_pem
+E.lambda
+E.R_mem
+E.R_ele
+E.m
+E.sigma_alk
+E.sigma_so
+E.n_H2
+E.M_H2
+E.p_H2
+E.n_O2
+E.M_O2
+E.p_O2
+E.M_H2O
+E.T_H2O
+E.cp_H2O
+E.G_r_0
+E.H_r
+E.H_r_0
 E.z
 E.T_0
+E.p_0
 E.T
-E.p_H2
-E.p_O2
 E.a_H2O
+E.V_cell
+E.V_th_0
 E.V_rev_0
 E.V_rev
 E.V_act
 E.V_ohm
+E.V_diff
+E.I
 E.i
 E.P_el
+E.Q
 E.eff
-E.alpha_m
-E.i_0
+HS.M_H2
+HS.n_O2
+HS.M_O2
+HS.n_H2O
+HS.M_H2O
 HS.n
 HS.der(n)
 
-double initialValue(27,6)
-  0       0                  0       0                  6  260   # PI.p.v
-  0       0                  0       0                  6  260   # PI.n.v
- -1       0                  0       0                  2  280   # PI.i
-  0       0                  0       0                  3  256   # PI.der(i)
- -1       0                  0       0                  2  280   # PI.InputPower
-  0       0                  0       0                  3  256   # PI.der(InputPower)
-  0       0                  0       0                  6  260   # E.n.v
- -1       1                  0       0                  1  280   # E.A
-  0 2.3648300000000000E+005  0       0                  6  256   # E.G
-  0 2.8583000000000000E+005  0       0                  6  256   # E.H
+double initialValue(53,6)
+ -1       0                  0       0                  2  280   # PI.PowerOutput
+  0       0                  0       0                  3  256   # PI.der(PowerOutput)
+  0       0                  0       0                  6  388   # E.O2_Output.m_flow
+  0       0                  0       0                  6  388   # E.H2_Output.m_flow
+  0       0                  0       0                  6  388   # E.H2O_Input.m_flow
+ -1 5.0000000000000000E-001  0       0                  1  280   # E.alpha_m
+ -1 2.5000000000000001E-003  0       0                  1  280   # E.A
+  0 2.1800000000000001E-003  0       0                  6  256   # E.i_0
+  0   20000                  0       0                  6  256   # E.i_max
+ -1 1.7500000000000000E-004  0       0                  1  280   # E.delta
+  0       0                  0       0                  6  256   # E.sigma_pem
+ -1      22                  0       0                  1  280   # E.lambda
+  0       0                  0       0                  6  256   # E.R_mem
+  0 2.0000000000000000E-003  0       0                  6  256   # E.R_ele
+ -1 2.0000000000000001E-001  0       0                  1  280   # E.m
+  0       0                  0       0                  6  256   # E.sigma_alk
+  0 3.3147358085154480E-011  0       0                  6  256   # E.sigma_so
+  0       0                  0       0                  6  256   # E.n_H2
+  0 2.0200000000000000E+000  0 1.0000000000000000E+100  6  256   # E.M_H2
+ -1 4.0000000000000000E+005  0 1.0000000000000000E+100  1  280   # E.p_H2
+  0       0                  0       0                  6  256   # E.n_O2
+  0      16                  0 1.0000000000000000E+100  6  256   # E.M_O2
+ -1 4.0000000000000000E+005  0 1.0000000000000000E+100  1  280   # E.p_O2
+  0 1.8020000000000000E+001  0 1.0000000000000000E+100  6  256   # E.M_H2O
+ -1 2.9814999999999998E+002  0 1.0000000000000000E+100  1  280   # E.T_H2O
+  0    1004                  0       0                  6  256   # E.cp_H2O
+  0 2.3648300000000000E+005  0       0                  6  256   # E.G_r_0
+  0 2.8583000000000000E+005  0       0                  6  256   # E.H_r
+  0 2.8583000000000000E+005  0       0                  6  256   # E.H_r_0
   0       2                  0       0                  6  256   # E.z
   0 2.9814999999999998E+002  0 1.0000000000000000E+100  6  256   # E.T_0
+  0 1.0310500000000000E+005  0       0                  6  256   # E.p_0
   0 2.9814999999999998E+002  0 1.0000000000000000E+100  6  256   # E.T
-  0   50000                  0       0                  6  256   # E.p_H2
-  0   50000                  0       0                  6  256   # E.p_O2
   0       1                  0       0                  6  256   # E.a_H2O
+  0       0                  0       0                  6  256   # E.V_cell
+  0 1.4812095861547481E+000  0       0                  6  256   # E.V_th_0
   0 1.2254867808229830E+000  0       0                  6  256   # E.V_rev_0
-  0 1.4339777157327116E+000  0       0                  6  256   # E.V_rev
+  0       0                  0       0                  6  256   # E.V_rev
   0       0                  0       0                  6  256   # E.V_act
   0       0                  0       0                  6  256   # E.V_ohm
-  0       0                  0       0                  6  256   # E.i
+  0       0                  0       0                  6  256   # E.V_diff
+  0       0                  0       0                  6  256   # E.I
+  0       0                  0       0                  6  288   # E.i
   0       0                  0       0                  6  256   # E.P_el
+  0       0                  0       0                  6  256   # E.Q
   0       0                  0 1.0000000000000000E+100  6  256   # E.eff
- -1 5.0000000000000000E-001  0       0                  1  280   # E.alpha_m
-  0 5.0000000000000003E-002  0       0                  6  256   # E.i_0
+  0 2.0200000000000000E+000  0 1.0000000000000000E+100  6  256   # HS.M_H2
+  0       0                  0       0                  6  256   # HS.n_O2
+  0      16                  0 1.0000000000000000E+100  6  256   # HS.M_O2
+  0       0                  0       0                  6  256   # HS.n_H2O
+  0 1.8020000000000000E+001  0 1.0000000000000000E+100  6  256   # HS.M_H2O
  -1       0                  0 1.0000000000000000E+100  2  280   # HS.n
   0       0                  0       0                  3  256   # HS.der(n)
 
@@ -209,32 +261,58 @@ double initialValue(27,6)
 #   nominal value (and maybe minimum and maximum values given in 
 #   column 3 and 4). If these values are zero, scale(i)=1 is used).
 #
-char initialDescription(27,58)
-Potential at the pin [V]
-Potential at the pin [V]
-[A]
-[A/s]
-[J]
+char initialDescription(53,81)
 [W]
-Potential at the pin [V]
-Area of exchange-membrane [m2]
-freie Gische Energie bei T=298,15K und P=1atm [J/mol]
-Reaktionsenthalpie bei T=298,15K und P=1atm [J/mol]
-Anzahl der ausgetauschten Elektronen pro Elementarreaktion
-standard temperature [K|degC]
-temperature of incomming Water [K|degC]
+[W/s]
+mass flow rate of sub-component [kg/s]
+mass flow rate of sub-component [kg/s]
+mass flow rate of sub-component [kg/s]
+für Überspannung [1]
+active area [m2]
+hat mit Material der Membran zu tun [A/m2]
+maximal stromdichte [A/m2]
+membran thickness [m]
+conductivity of membran [S/m]
+water content of membran (dry: ~0.5; water saturated gas: ~13; liquid water: ~22)
+
+
+molar Concentration of the electrolyt-solution
+conductivity of elektrolyte [S/m]
+conductivity of elektrolyte [S/m]
+[mol/s]
+[kg/mol]
 partial pressure H2 [Pa|bar]
+[mol/s]
+[kg/mol]
 partial pressure O2 [Pa|bar]
-water activity (equals 1 for liquid water) [PA^1.5]
+[kg/mol]
+temperature of incomming Water [K|degC]
+[J/(kg.K)]
+free gibbs reaktion energy at T=298,15K and P=1atm [J/mol]
+reaktion enthalpy [J/mol]
+reaktion enthalpy at T=298,15K and P=1atm [J/mol]
+nuber of exchanged elektrons per elementary reaktion
+standard temperature [K|degC]
+standard pressure [Pa|bar]
+process temperature [K|degC]
+water activity (equals 1 for liquid water) [1]
+needed Cell-Voltage [V]
+thermo-neutral Cell-Voltage at T=298,15K and P=1atm [V]
 reversible Cell-Voltage at T=298,15K and P=1atm [V]
 reversible Cell-Voltage [V]
-Voltage-losse due to activation processes [V]
-ohmic Voltage-losses [V]
+activation overpotetial [V]
+ohmic resistance [V]
+diffusion overpotetial [V]
+[A]
 [A/m2]
-electrical power in/output [W]
+electrical input power [W]
+cooling power [W]
 [1]
-[1]
-[A/m2]
+[kg/mol]
+[mol/s]
+[kg/mol]
+[mol/s]
+[kg/mol]
 [mol]
 [mol/s]
 
