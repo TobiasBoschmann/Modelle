@@ -1,0 +1,15 @@
+#1
+double n_H2(6,2)   # comment line
+  0   0
+  1   0
+  1   1
+  2   4
+  3   9
+  4  16
+double n_O2(6,2)   # another comment line
+  0   0
+  2   0
+  4   8
+  6  18
+  8  32
+  10 30

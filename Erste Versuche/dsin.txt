@@ -9,7 +9,7 @@ Modelica experiment file
 double experiment(7,1)
        0                   # StartTime    Time at which integration starts
                            #              (and linearization and trimming time)
-       1                   # StopTime     Time at which integration stops
+       6                   # StopTime     Time at which integration stops
        0                   # Increment    Communication step size, if > 0
      500                   # nInterval    Number of communication intervals, if > 0
  1.0000000000000000E-004   # Tolerance    Relative precision of signals for
@@ -102,53 +102,24 @@ int settings(13,1)
 
 
 #    Names of initial variables
-char initialName(53,19)
-PI.PowerOutput
-PI.der(PowerOutput)
-E.O2_Output.m_flow
-E.H2_Output.m_flow
-E.H2O_Input.m_flow
-E.alpha_m
-E.A
-E.i_0
-E.i_max
-E.delta
-E.sigma_pem
-E.lambda
-E.R_mem
-E.R_ele
-E.m
-E.sigma_alk
-E.sigma_so
-E.n_H2
-E.M_H2
-E.p_H2
-E.n_O2
-E.M_O2
-E.p_O2
-E.M_H2O
-E.T_H2O
-E.cp_H2O
-E.G_r_0
-E.H_r
-E.H_r_0
-E.z
-E.T_0
-E.p_0
-E.T
-E.a_H2O
-E.V_cell
-E.V_th_0
-E.V_rev_0
-E.V_rev
-E.V_act
-E.V_ohm
-E.V_diff
-E.I
-E.i
-E.P_el
-E.Q
-E.eff
+char initialName(70,20)
+HS.O2.m_flow
+HS.H2.m_flow
+HS.H2O.m_flow
+HS.H2Verbrauch[1, 1]
+HS.H2Verbrauch[1, 2]
+HS.H2Verbrauch[2, 1]
+HS.H2Verbrauch[2, 2]
+HS.H2Verbrauch[3, 1]
+HS.H2Verbrauch[3, 2]
+HS.H2Verbrauch[4, 1]
+HS.H2Verbrauch[4, 2]
+HS.H2Verbrauch[5, 1]
+HS.H2Verbrauch[5, 2]
+HS.H2Verbrauch[6, 1]
+HS.H2Verbrauch[6, 2]
+HS.H2Verbrauch[7, 1]
+HS.H2Verbrauch[7, 2]
 HS.M_H2
 HS.n_O2
 HS.M_O2
@@ -156,61 +127,124 @@ HS.n_H2O
 HS.M_H2O
 HS.n
 HS.der(n)
+B.Power
+B.A
+B.n
+B.alpha_m
+B.i_0_pem
+B.i_max
+B.delta_pem
+B.sigma_pem
+B.lambda
+B.t_min_pem
+B.Cp_0
+B.A_0
+B.m
+B.sigma_alk
+B.t_min_alk
+B.t_start_alk
+B.sigma_so
+B.t_min_so
+B.n_H2
+B.M_H2
+B.p_H2
+B.cp_H2
+B.n_O2
+B.M_O2
+B.p_O2
+B.cp_O2
+B.M_H2O
+B.a_H2O
+B.G_r_0
+B.H_r_0
+B.z
+B.T_0
+B.p_0
+B.T
+B.T_u
+B.U_zell
+B.U_th_0
+B.U_rev_0
+B.U_rev
+B.U_akt
+B.U_ohm
+B.U_konz
+B.I
+B.i
+B.Q
+B.eff
 
-double initialValue(53,6)
- -1       0                  0       0                  2  280   # PI.PowerOutput
-  0       0                  0       0                  3  256   # PI.der(PowerOutput)
-  0       0                  0       0                  6  388   # E.O2_Output.m_flow
-  0       0                  0       0                  6  388   # E.H2_Output.m_flow
-  0       0                  0       0                  6  388   # E.H2O_Input.m_flow
- -1 5.0000000000000000E-001  0       0                  1  280   # E.alpha_m
- -1 2.5000000000000001E-003  0       0                  1  280   # E.A
-  0 2.1800000000000001E-003  0       0                  6  256   # E.i_0
-  0   20000                  0       0                  6  256   # E.i_max
- -1 1.7500000000000000E-004  0       0                  1  280   # E.delta
-  0       0                  0       0                  6  256   # E.sigma_pem
- -1      22                  0       0                  1  280   # E.lambda
-  0       0                  0       0                  6  256   # E.R_mem
-  0 2.0000000000000000E-003  0       0                  6  256   # E.R_ele
- -1 2.0000000000000001E-001  0       0                  1  280   # E.m
-  0       0                  0       0                  6  256   # E.sigma_alk
-  0 3.3147358085154480E-011  0       0                  6  256   # E.sigma_so
-  0       0                  0       0                  6  256   # E.n_H2
-  0 2.0200000000000000E+000  0 1.0000000000000000E+100  6  256   # E.M_H2
- -1 4.0000000000000000E+005  0 1.0000000000000000E+100  1  280   # E.p_H2
-  0       0                  0       0                  6  256   # E.n_O2
-  0      16                  0 1.0000000000000000E+100  6  256   # E.M_O2
- -1 4.0000000000000000E+005  0 1.0000000000000000E+100  1  280   # E.p_O2
-  0 1.8020000000000000E+001  0 1.0000000000000000E+100  6  256   # E.M_H2O
- -1 2.9814999999999998E+002  0 1.0000000000000000E+100  1  280   # E.T_H2O
-  0    1004                  0       0                  6  256   # E.cp_H2O
-  0 2.3648300000000000E+005  0       0                  6  256   # E.G_r_0
-  0 2.8583000000000000E+005  0       0                  6  256   # E.H_r
-  0 2.8583000000000000E+005  0       0                  6  256   # E.H_r_0
-  0       2                  0       0                  6  256   # E.z
-  0 2.9814999999999998E+002  0 1.0000000000000000E+100  6  256   # E.T_0
-  0 1.0310500000000000E+005  0       0                  6  256   # E.p_0
-  0 2.9814999999999998E+002  0 1.0000000000000000E+100  6  256   # E.T
-  0       1                  0       0                  6  256   # E.a_H2O
-  0       0                  0       0                  6  256   # E.V_cell
-  0 1.4812095861547481E+000  0       0                  6  256   # E.V_th_0
-  0 1.2254867808229830E+000  0       0                  6  256   # E.V_rev_0
-  0       0                  0       0                  6  256   # E.V_rev
-  0       0                  0       0                  6  256   # E.V_act
-  0       0                  0       0                  6  256   # E.V_ohm
-  0       0                  0       0                  6  256   # E.V_diff
-  0       0                  0       0                  6  256   # E.I
-  0       0                  0       0                  6  288   # E.i
-  0       0                  0       0                  6  256   # E.P_el
-  0       0                  0       0                  6  256   # E.Q
-  0       0                  0 1.0000000000000000E+100  6  256   # E.eff
-  0 2.0200000000000000E+000  0 1.0000000000000000E+100  6  256   # HS.M_H2
-  0       0                  0       0                  6  256   # HS.n_O2
-  0      16                  0 1.0000000000000000E+100  6  256   # HS.M_O2
-  0       0                  0       0                  6  256   # HS.n_H2O
-  0 1.8020000000000000E+001  0 1.0000000000000000E+100  6  256   # HS.M_H2O
- -1       0                  0 1.0000000000000000E+100  2  280   # HS.n
-  0       0                  0       0                  3  256   # HS.der(n)
+double initialValue(70,6)
+  0       0                  0       0                  6   388   # HS.O2.m_flow
+  0       0                  0       0                  6   388   # HS.H2.m_flow
+  0       0                  0       0                  6   388   # HS.H2O.m_flow
+  0       0                  0       0                  6  1280   # HS.H2Verbrauch[1, 1]
+  0 2.0000000000000001E-001  0       0                  6  1280   # HS.H2Verbrauch[1, 2]
+  0       1                  0       0                  6  1280   # HS.H2Verbrauch[2, 1]
+  0       0                  0       0                  6  1280   # HS.H2Verbrauch[2, 2]
+  0       2                  0       0                  6  1280   # HS.H2Verbrauch[3, 1]
+  0 2.9999999999999999E-001  0       0                  6  1280   # HS.H2Verbrauch[3, 2]
+  0       3                  0       0                  6  1280   # HS.H2Verbrauch[4, 1]
+  0 4.0000000000000000E-014  0       0                  6  1280   # HS.H2Verbrauch[4, 2]
+  0       4                  0       0                  6  1280   # HS.H2Verbrauch[5, 1]
+  0 4.0000000000000000E-014  0       0                  6  1280   # HS.H2Verbrauch[5, 2]
+  0       5                  0       0                  6  1280   # HS.H2Verbrauch[6, 1]
+  0 2.0000000000000000E-014  0       0                  6  1280   # HS.H2Verbrauch[6, 2]
+  0       6                  0       0                  6  1280   # HS.H2Verbrauch[7, 1]
+  0 1.0000000000000000E-014  0       0                  6  1280   # HS.H2Verbrauch[7, 2]
+  0 2.0200000000000000E+000  0 1.0000000000000000E+100  6  1280   # HS.M_H2
+  0       0                  0       0                  6  1280   # HS.n_O2
+  0      16                  0 1.0000000000000000E+100  6  1280   # HS.M_O2
+  0       0                  0       0                  6  1280   # HS.n_H2O
+  0 1.8020000000000000E+001  0 1.0000000000000000E+100  6  1280   # HS.M_H2O
+ -1       0                  0 1.0000000000000000E+100  2  1304   # HS.n
+  0       0                  0       0                  3  1280   # HS.der(n)
+  0       0                  0       0                  6   256   # B.Power
+ -1      10                  0       0                  1   280   # B.A
+ -1     120                  0       0                  1   280   # B.n
+ -1 7.3529999999999995E-001  0       0                  1   280   # B.alpha_m
+  0 1.0800000000000001E-004  0       0                  6   256   # B.i_0_pem
+  0   20000                  0       0                  6   256   # B.i_max
+ -1 1.4999999999999999E-004  0       0                  1   280   # B.delta_pem
+  0       0                  0       0                  6   256   # B.sigma_pem
+ -1      22                  0       0                  1   280   # B.lambda
+  0 1.0000000000000001E-001  0       0                  6   256   # B.t_min_pem
+  0 1.6211600000000000E+005  0       0                  6   256   # B.Cp_0
+  0 1.7400000000000000E+000  0       0                  6   256   # B.A_0
+ -1 2.0000000000000001E-001  0       0                  1   280   # B.m
+  0       0                  0       0                  6   256   # B.sigma_alk
+  0 2.0000000000000001E-001  0       0                  6   256   # B.t_min_alk
+  0       2                  0       0                  6   256   # B.t_start_alk
+  0 7.1958198280365954E-009  0       0                  6   256   # B.sigma_so
+  0 2.9999999999999999E-001  0       0                  6   256   # B.t_min_so
+  0       0                  0       0                  6   256   # B.n_H2
+  0 2.0200000000000000E+000  0 1.0000000000000000E+100  6   256   # B.M_H2
+ -1 4.0000000000000000E+005  0 1.0000000000000000E+100  1   280   # B.p_H2
+  0 2.8899999999999999E+001  0       0                  6   256   # B.cp_H2
+  0       0                  0       0                  6   256   # B.n_O2
+  0      16                  0 1.0000000000000000E+100  6   256   # B.M_O2
+ -1 4.0000000000000000E+005  0 1.0000000000000000E+100  1   280   # B.p_O2
+  0 2.9800000000000001E+001  0       0                  6   256   # B.cp_O2
+  0 1.8020000000000000E+001  0 1.0000000000000000E+100  6   256   # B.M_H2O
+  0       1                  0       0                  6   256   # B.a_H2O
+  0 2.3648300000000000E+005  0       0                  6   256   # B.G_r_0
+  0 2.8583000000000000E+005  0       0                  6   256   # B.H_r_0
+  0       2                  0       0                  6   256   # B.z
+  0 2.9814999999999998E+002  0 1.0000000000000000E+100  6   256   # B.T_0
+  0 1.0310500000000000E+005  0       0                  6   256   # B.p_0
+  0 3.5314999999999998E+002  0 1.0000000000000000E+100  6   256   # B.T
+ -1 2.9314999999999998E+002  0 1.0000000000000000E+100  1   280   # B.T_u
+  0       0                  0       0                  6   256   # B.U_zell
+  0 1.4812095861547481E+000  0       0                  6   256   # B.U_th_0
+  0 1.2254867808229830E+000  0       0                  6   256   # B.U_rev_0
+  0       0                  0       0                  6   256   # B.U_rev
+  0       0                  0       0                  6   256   # B.U_akt
+  0       0                  0       0                  6   256   # B.U_ohm
+  0       0                  0       0                  6   256   # B.U_konz
+  0       0                  0       0                  6   256   # B.I
+  0       0                  0       0                  6   256   # B.i
+  0       0                  0       0                  6   256   # B.Q
+  0       0                  0 1.0000000000000000E+100  6   256   # B.eff
 
 
 # Matrix with 6 columns defining the initial value calculation
@@ -261,41 +295,66 @@ double initialValue(53,6)
 #   nominal value (and maybe minimum and maximum values given in 
 #   column 3 and 4). If these values are zero, scale(i)=1 is used).
 #
-char initialDescription(53,81)
-[W]
-[W/s]
+char initialDescription(70,87)
 mass flow rate of sub-component [kg/s]
 mass flow rate of sub-component [kg/s]
 mass flow rate of sub-component [kg/s]
-für Überspannung [1]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[kg/mol]
+[mol/s]
+[kg/mol]
+[mol/s]
+[kg/mol]
+[mol]
+[mol/s]
+Input power for the elektrolyser [W]
 active area [m2]
+Anzahl der in parallelgeschalteten Zellen
+für Überspannung [1]
 hat mit Material der Membran zu tun [A/m2]
 maximal stromdichte [A/m2]
 membran thickness [m]
 conductivity of membran [S/m]
 water content of membran (dry: ~0.5; water saturated gas: ~13; liquid water: ~22)
-
-
+minimale Teillast
+Literaturwert [J/K]
+Literaturwert [m2]
 molar Concentration of the electrolyt-solution
 conductivity of elektrolyte [S/m]
+minimale Teillast
+Verhältniss der durchschnittlichen Anlaufzeiten von Alkalischen zu PEM Elektrolyseuren
 conductivity of elektrolyte [S/m]
+minimale Teillast
 [mol/s]
 [kg/mol]
 partial pressure H2 [Pa|bar]
+[J/(kg.K)]
 [mol/s]
 [kg/mol]
 partial pressure O2 [Pa|bar]
-[kg/mol]
-temperature of incomming Water [K|degC]
 [J/(kg.K)]
+[kg/mol]
+water activity (equals 1 for liquid water) [1]
 free gibbs reaktion energy at T=298,15K and P=1atm [J/mol]
-reaktion enthalpy [J/mol]
 reaktion enthalpy at T=298,15K and P=1atm [J/mol]
 nuber of exchanged elektrons per elementary reaktion
 standard temperature [K|degC]
 standard pressure [Pa|bar]
 process temperature [K|degC]
-water activity (equals 1 for liquid water) [1]
+Umgebungstemperatur [K|degC]
 needed Cell-Voltage [V]
 thermo-neutral Cell-Voltage at T=298,15K and P=1atm [V]
 reversible Cell-Voltage at T=298,15K and P=1atm [V]
@@ -305,14 +364,6 @@ ohmic resistance [V]
 diffusion overpotetial [V]
 [A]
 [A/m2]
-electrical input power [W]
 cooling power [W]
 [1]
-[kg/mol]
-[mol/s]
-[kg/mol]
-[mol/s]
-[kg/mol]
-[mol]
-[mol/s]
 

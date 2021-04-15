@@ -1,5 +1,5 @@
 Log-file of program ./dymosim
-(generated: Tue Apr  6 19:50:58 2021)
+(generated: Thu Apr  8 19:10:36 2021)
 
 dymosim started
 ... "dsin.txt" loading (dymosim input file)
@@ -9,19 +9,19 @@ Integration started at T = 0 using integration method DASSL
 (DAE multi-step solver (dassl/dasslrt of Petzold modified by Dynasim))
 The following error was detected at time: 1.000000000001
 
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-13.053)
+Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-21.1717)
 
 First evaluation failed for non-linear solver.
 
 The following error was detected at time: 1.000000000001
 
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-13.053)
+Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-21.1717)
 
 Non-linear solver will attempt to handle this problem.
 
 The following error was detected at time: 1.000000000001
 
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-13.053)
+Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-21.1717)
 
 Non-linear solver will attempt to handle this problem.
 
@@ -31,7 +31,7 @@ ERROR: Failed to solve non-linear system using Newton solver.
  - especially if this occurs at the starting point (see homotopy in the manual) - in rare cases it could occur at events
  * the equations are too discontinuous for the non-linear solver (likely due to over-using noEvent) - the residual will have knees,
  * the equations have no solution (note that in some cases the event-logic can cause this) - the residual will be above zero.
-Jacobian has inverse norm 5.51772e-12 and condition number 1.
+Jacobian has inverse norm 5.39651e-12 and condition number 1.
 The residual is large, using better start values can be a solution.
 To get more information: Turn on Simulation/Setup/Debug/Nonlinear solver diagnostics/Details
 Solution to systems of equations not found at time = 1
@@ -39,13 +39,13 @@ Solution to systems of equations not found at time = 1
 Tag: simulation.nonlinear[1]
    Failed to evaluate any residual. Try to give better start-values.
    Iteration is not making good progress.
-   Accumulated number of residue       calc.: 3289
-   Accumulated number of symbolic Jacobian calc.: 761
+   Accumulated number of residue       calc.: 3224
+   Accumulated number of symbolic Jacobian calc.: 765
    Last values of solution vector:
-E.i = 21532.2
+E.i = 20944.7
 The following error was detected at time: 1.000000000001
 
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-13.053)
+Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-21.1717)
 
 First evaluation failed for non-linear solver.
 
@@ -53,19 +53,19 @@ Solver will attempt to handle this problem.
 
 The following error was detected at time: 1.000000000001
 
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-24.2887)
+Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-170.638)
 
 First evaluation failed for non-linear solver.
 
 The following error was detected at time: 1.000000000001
 
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-24.2887)
+Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-170.638)
 
 Non-linear solver will attempt to handle this problem.
 
 The following error was detected at time: 1.000000000001
 
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-24.2887)
+Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-170.638)
 
 Non-linear solver will attempt to handle this problem.
 
@@ -75,7 +75,7 @@ ERROR: Failed to solve non-linear system using Newton solver.
  - especially if this occurs at the starting point (see homotopy in the manual) - in rare cases it could occur at events
  * the equations are too discontinuous for the non-linear solver (likely due to over-using noEvent) - the residual will have knees,
  * the equations have no solution (note that in some cases the event-logic can cause this) - the residual will be above zero.
-Jacobian has inverse norm 1.92933e-12 and condition number 1.
+Jacobian has inverse norm 0 and condition number -nan(ind).
 The residual is large, using better start values can be a solution.
 To get more information: Turn on Simulation/Setup/Debug/Nonlinear solver diagnostics/Details
 Solution to systems of equations not found at time = 1
@@ -83,211 +83,27 @@ Solution to systems of equations not found at time = 1
 Tag: simulation.nonlinear[1]
    Failed to evaluate any residual. Try to give better start-values.
    Iteration is not making good progress.
-   Accumulated number of residue       calc.: 4161
-   Accumulated number of symbolic Jacobian calc.: 948
+   Accumulated number of residue       calc.: 4142
+   Accumulated number of symbolic Jacobian calc.: 961
    Last values of solution vector:
-E.i = 20823.4
+E.i = 20117.2
 The following error was detected at time: 1.000000000001
 
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-24.2887)
-
-First evaluation failed for non-linear solver.
-
-Solver will attempt to handle this problem.
-
-The following error was detected at time: 0.9838409058186054
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-109.868)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.9838409058186054
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-339.704)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.9838409058186054
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-788.992)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.9838409058186054
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-11779.4)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.9838409058186054
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-1464.36)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.9838409058186054
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-11068.8)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.9838409058186054
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-19949.4)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.9838409058186054
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-19949.4)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.97
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-5005.22)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.972
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-2303.51)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.974
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-1765.33)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.976
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-1690.21)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.978
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-1968.7)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.98
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-3098.68)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 0.982
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-14333.1)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 1.000000000001
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-370.383)
-
-First evaluation failed for non-linear solver.
-
-The following error was detected at time: 1.000000000001
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-370.383)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 1.000000000001
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-370.382)
-
-Non-linear solver will attempt to handle this problem.
-
-ERROR: Failed to solve non-linear system using Newton solver.
- It could be that:
-* the starting values are too far from the solution
- - especially if this occurs at the starting point (see homotopy in the manual) - in rare cases it could occur at events
- * the equations are too discontinuous for the non-linear solver (likely due to over-using noEvent) - the residual will have knees,
- * the equations have no solution (note that in some cases the event-logic can cause this) - the residual will be above zero.
-Jacobian has inverse norm 2.08858e-10 and condition number 1.
-The residual is large, using better start values can be a solution.
-To get more information: Turn on Simulation/Setup/Debug/Nonlinear solver diagnostics/Details
-Solution to systems of equations not found at time = 1
-   Nonlinear system of equations number = 1
-Tag: simulation.nonlinear[1]
-   Failed to evaluate any residual. Try to give better start-values.
-   Iteration is not making good progress.
-   Accumulated number of residue       calc.: 4507
-   Accumulated number of symbolic Jacobian calc.: 999
-   Last values of solution vector:
-E.i = 20054
-The following error was detected at time: 1.000000000001
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-370.382)
-
-First evaluation failed for non-linear solver.
-
-Solver will attempt to handle this problem.
-
-The following error was detected at time: 0.9959602264554015
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-80618.3)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 1.000000000001
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-280711)
-
-First evaluation failed for non-linear solver.
-
-The following error was detected at time: 1.000000000001
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-280711)
-
-Non-linear solver will attempt to handle this problem.
-
-The following error was detected at time: 1.000000000001
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-279925)
-
-Non-linear solver will attempt to handle this problem.
-
-ERROR: Failed to solve non-linear system using Newton solver.
- It could be that:
-* the starting values are too far from the solution
- - especially if this occurs at the starting point (see homotopy in the manual) - in rare cases it could occur at events
- * the equations are too discontinuous for the non-linear solver (likely due to over-using noEvent) - the residual will have knees,
- * the equations have no solution (note that in some cases the event-logic can cause this) - the residual will be above zero.
-Jacobian has inverse norm 3.42909e-11 and condition number 1.
-The residual is large, using better start values can be a solution.
-To get more information: Turn on Simulation/Setup/Debug/Nonlinear solver diagnostics/Details
-Solution to systems of equations not found at time = 1
-   Nonlinear system of equations number = 1
-Tag: simulation.nonlinear[1]
-   Failed to evaluate any residual. Try to give better start-values.
-   Iteration is not making good progress.
-   Accumulated number of residue       calc.: 4610
-   Accumulated number of symbolic Jacobian calc.: 1018
-   Last values of solution vector:
-E.i = 20000.1
-The following error was detected at time: 1.000000000001
-
-Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-279925)
+Model error - Modelica.Math.log (20000.0/(20000.0-E.i)) = Modelica.Math.log (-170.638)
 
 First evaluation failed for non-linear solver.
 
 Solver will attempt to handle this problem.
 
 Integration terminated successfully at T = 1
-   CPU-time for integration      : 0.105 seconds
-   CPU-time for one GRID interval: 0.21 milli-seconds
+   CPU-time for integration      : 0.041 seconds
+   CPU-time for one GRID interval: 0.082 milli-seconds
    Number of result points       : 502
    Number of GRID   points       : 501
-   Number of (successful) steps  : 29
-   Number of F-evaluations       : 63
-   Number of H-evaluations       : 529
-   Number of Jacobian-evaluations: 28
+   Number of (successful) steps  : 25
+   Number of F-evaluations       : 53
+   Number of H-evaluations       : 525
+   Number of Jacobian-evaluations: 24
    Number of (model) time events : 0
    Number of (U) time events     : 0
    Number of state    events     : 0
