@@ -1,0 +1,36 @@
+Log-file of program ./dymosim
+(generated: Fri May 21 13:20:26 2021)
+
+dymosim started
+... "HydrogenComponents.Examples.Konzept_PV_BZ" simulating
+... "dsin.txt" loading (dymosim input file)
+... loading "wetter" from "J:/Dymola/AixLib-development/AixLib/Resources/WeatherData/2020_hkr_tbo.txt"
+The table dimensions of matrix "wetter(8771,18)" from file "J:/Dymola/AixLib-development/AixLib/Resources/WeatherData/2020_hkr_tbo.txt" do not match the actual table size (line 8810).
+... "Konzept_PV_BZ.mat" creating (simulation result file)
+
+Integration started at T = 0 using integration method DASSL
+(DAE multi-step solver (dassl/dasslrt of Petzold modified by Dassault Systemes))
+
+Integration terminated successfully at T = 31622400
+  WARNING: You have many time events. This is probably due to fast sampling.
+  Enable logging of event in Simulation/Setup/Debug/Events during simulation
+   CPU-time for integration                : 276 seconds
+   CPU-time for one grid interval          : 7.87 milliseconds
+   CPU-time for initialization             : 0.052 seconds
+   Number of result points                 : 48854
+   Number of grid points                   : 35137
+   Number of accepted steps                : 370135
+   Number of f-evaluations (dynamics)      : 371399
+   Number of crossing function evaluations : 411828
+   Number of Jacobian-evaluations          : 332923
+   Number of model time events             : 35137
+   Number of input time events             : 0
+   Number of state events                  : 1009
+   Number of step events                   : 0
+   Minimum integration stepsize            : 0.000112
+   Maximum integration stepsize            : 450
+   Maximum integration order               : 3
+Calling terminal section
+... "dsfinal.txt" creating (final states)
+
+SUCCESSFUL simulation of HydrogenComponents.Examples.Konzept_PV_BZ
