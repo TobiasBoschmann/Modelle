@@ -195,7 +195,7 @@ package HydrogenComponents
     parameter SI.CurrentDensity i_max_pem = 2*10^4 "Maximale Stromdichte";
     parameter SI.Length delta_pem = 0.178*10^(-3) "Dicke der Menmbran";
     SI.Conductivity sigma_pem = (0.005139*lambda -0.00326)*exp(1268*(1/303-1/T))*10^2 "Leitfähigkeit der Membran";
-    parameter Real lambda = 22 "Feuchtigkeit der Membran (trocken: ~0.5; geättigtes Gas: ~13; flüssiges Wasser: ~22)";
+    parameter Real lambda = 22 "Feuchtigkeit der Membran (trocken: ~0.5; gesättigtes Gas: ~13; flüssiges Wasser: ~22)";
     constant Real t_min_pem = 0.1 "minimale Teillast";
 
 
@@ -275,7 +275,7 @@ package HydrogenComponents
                                               delta_alk/sigma_alk
              elseif Modelica.Utilities.Strings.isEqual(Bauart, "so") then
                                               delta_pem/sigma_so
-             else                             delta_pem/sigma_pem;// + 0.096*10^(-4);
+   else                            delta_pem/sigma_pem + 0.096*10^(-4);
 
     Real alpha = if Modelica.Utilities.Strings.isEqual(Bauart, "alk") then
                                               alpha_alk
